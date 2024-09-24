@@ -1,0 +1,527 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos Gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f0f0f0;
+}
+
+/* Cabeçalho e Navegação */
+header {
+    background-color: #333;
+    padding: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 10px;
+}
+
+/* Seção Hero */
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #3498db, #2ecc71);
+    padding: 100px 50px;
+    color: white;
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero .btn {
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.hero .btn:hover {
+    background-color: #ddd;
+}
+
+.hero-image img {
+    width: 350px;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+/* Seção de Serviços */
+.services {
+    padding: 50px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.services-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.service {
+    width: 45%;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.service p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Estilo da página Sobre Mim */
+.sobre-mim {
+    padding: 50px;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.sobre-mim-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.perfil img {
+    width: 250px;
+    border-radius: 50%;
+    border: 5px solid #3498db;
+}
+
+.texto {
+    max-width: 60%;
+    text-align: left;
+}
+
+.texto p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.texto .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.texto .btn:hover {
+    background-color: #2980d9;
+}
+
+/* Seção de Habilidades */
+.habilidades {
+    padding: 50px;
+    background-color: white;
+    text-align: center;
+}
+
+.habilidades h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.lista-habilidades {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.habilidade {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.habilidade img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.habilidade p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+.habilidade:hover img {
+    transform: scale(1.2);
+}
+
+.habilidade:hover {
+    transform: translateY(-10px);
+}
+
+/* Conteúdo Principal */
+main {
+    padding: 20px;
+}
+
+section h1,
+section h2 {
+    margin-bottom: 20px;
+}
+
+section p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Projetos */
+.projetos {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.slider {
+    position: relative;
+    max-width: 800px; 
+    margin: auto;
+    overflow: hidden;
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 100%; 
+    box-sizing: border-box; 
+    text-align: center;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    z-index: 1;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 10px; 
+    padding: 10px 20px; 
+    background-color: #007BFF;
+    color: #fff; 
+    text-decoration: none; 
+    border-radius: 5px;
+    transition: background-color 0.3s; 
+}
+
+.btn:hover {
+    background-color: #0056b3; 
+}
+
+/* Projetos em Desenvolvimento */
+.projetos-em-andamento {
+    margin-top: 40px;
+}
+
+.grid-projetos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+    justify-content: center; 
+}
+
+.projeto {
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    padding: 10px;
+    text-align: center; 
+    max-width: 300px; 
+}
+
+.projeto img {
+    width: 100%; 
+    height: auto; 
+    border-radius: 5px; 
+}
+
+.projeto p {
+    margin: 10px 0; 
+}
+
+
+/* Container geral para o formulário */
+.contact-form-section {
+    background-color: #f5f5f5;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form-section h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contact-form-section p {
+    font-size: auto;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+/*estilo dos campos do formulário*/
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border: 1px solid #007BFF;
+    outline: none;
+}
+
+/*Botão de Envio*/
+.btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.confirmation-message {
+    background-color: #4CAF50; 
+    color: white; 
+    padding: 15px; 
+    margin-top: 20px; 
+    border-radius: 5px; 
+    text-align: center; 
+}
+
+/* Rodapé */
+/* Estilos gerais para o rodapé */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+}
+
+/* Estilização dos ícones sociais */
+.social-icons {
+    margin-bottom: 15px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.social-icons img:hover {
+    filter: grayscale(0%);
+}
+
+/* Estilização do texto de direitos autorais */
+.footer-text {
+    font-size: 14px;
+    color: #bbb;
+    margin-top: 10px;
+}
+
+
+/* Responsivade */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text,
+    .hero-image {
+        max-width: 100%;
+    }
+
+    .services-container {
+        flex-direction: column;
+    }
+
+    .service {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .sobre-mim-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .texto {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+
+    .lista-habilidades {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .lista-habilidades li {
+        margin-bottom: 10px;
+    }
+
+    .lista-habilidades {
+        flex-direction: column;
+    }
+
+    .habilidade img {
+        width: 60px;
+    }
+
+    .grid-projetos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projeto {
+        width: 100%;
+        max-width: 400px;
+    }
+
+}

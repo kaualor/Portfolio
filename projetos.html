@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Projetos - Portfólio Kauã Loriano</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cabeçalho e Menu de Navegação -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Sobre Mim</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Conteúdo Principal -->
+    <main>
+        <section class="projetos">
+            <h2>Meus Projetos</h2>
+            <!-- Slider -->
+            <section class="slider">
+                <div class="slider-container">
+                    <div class="slide active">
+                        <img src="img/Projeto-R6.png" alt="Projeto R6">
+                        <p>Interface baseada no jogo 'Tom Clancy's Rainbow Six Siege', desenvolvida com HTML, CSS e JavaScript como parte da imersão Dev da Alura.</p>
+                        <a href="https://projeto-r6-imersao-alura-dev.vercel.app/" target="_blank" class="btn">Ver Projeto</a>
+                    </div>
+                    <div class="slide">
+                        <img src="img/image.gif" alt="Projeto Sistema de Delivery">
+                        <p>Pequeno jogo interativo usando HTML, CSS e JavaScript. Adicionando animações e elementos visuais para torná-lo atrativo.</p>
+                        <p>Status: <strong>50% Completo</strong></p>
+                    </div>
+                    <div class="slide">
+                        <img src="img/image.gif"Projeto Clone do Spotify">
+                        <p>Ideia de Projeto para simular experiência do Spotify, permitindo aos usuários explorar músicas.</p>
+                        <p>Status: <strong>10% Completo</strong></p>
+                    </div>
+                </div>
+                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="next" onclick="changeSlide(1)">&#10095;</button>
+            </section>
+        </section>
+    </main>
+    
+    <!-- Rodapé -->
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/kau%C3%A3-loriano/" target="_blank">
+                <img src="img/icons8-linkedin-120.png" alt="LinkedIn" class="social-icon">
+            </a>
+            <a href="https://github.com/kaualor" target="_blank">
+                <img src="img/icons8-github-120 .png" alt="GitHub" class="social-icon">
+            </a>
+        </div>
+        <p class="footer-text">© 2024 Kauã Loriano. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.slide');
+            if (index >= slides.length) currentSlide = 0;
+            if (index < 0) currentSlide = slides.length - 1;
+
+            const sliderContainer = document.querySelector('.slider-container');
+            sliderContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === currentSlide) slide.classList.add('active');
+            });
+        }
+
+        function changeSlide(direction) {
+            currentSlide += direction;
+            showSlide(currentSlide);
+        }
+
+        // Mostrar o primeiro slide inicialmente
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>

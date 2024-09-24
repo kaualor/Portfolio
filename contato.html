@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Portfólio Kauã Loriano</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Cabeçalho e Menu de Navegação -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Sobre Mim</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Formulário de Contato -->
+    <section class="contact-form-section">
+        <div class="container">
+            <h1>Entre em Contato</h1>
+            <p>Gostaria de trabalhar comigo ou saber mais sobre meus projetos? Preencha o formulário abaixo!</p>
+            
+            <form action="https://formspree.io/f/manwglre" method="POST" class="contact-form">
+                <div class="input-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Seu email" required>
+                </div>
+                <div class="input-group">
+                    <label for="assunto">Assunto</label>
+                    <input type="text" id="assunto" name="assunto" placeholder="Assunto da mensagem" required>
+                </div>
+                <div class="input-group">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" rows="6" placeholder="Escreva sua mensagem aqui..." required></textarea>
+                </div>
+                <button type="submit" class="btn">Enviar Mensagem</button>
+            </form>
+             <!-- Mensagem de Confirmação -->
+        <div id="confirmation-message" class="confirmation-message" style="display: none;">
+            Mensagem enviada com sucesso!
+        </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/kau%C3%A3-loriano/" target="_blank">
+                <img src="img/icons8-linkedin-120.png" alt="LinkedIn" class="social-icon">
+            </a>
+            <a href="https://github.com/kaualor" target="_blank">
+                <img src="img/icons8-github-120 .png" alt="GitHub" class="social-icon">
+            </a>
+        </div>
+        <p class="footer-text">© 2024 Kauã Loriano. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+
+<script>
+    function showConfirmation(event) {
+        // Evita o envio padrão do formulário
+        event.preventDefault();
+        
+        // Mostra a mensagem de confirmação
+        const confirmationMessage = document.getElementById('confirmation-message');
+        confirmationMessage.style.display = 'block';
+        
+        // Reseta o formulário após 3 segundos
+        setTimeout(() => {
+            confirmationMessage.style.display = 'none';
+            event.target.reset(); // Reseta o formulário
+        }, 3000);
+
+        // Envia o formulário
+        event.target.submit(); // Envia o formulário após a exibição da mensagem
+    }
+</script>
+
+</html>
